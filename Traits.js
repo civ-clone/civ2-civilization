@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NormalMilitarism = exports.Militaristic = exports.Civilized = exports.Perfectionist = exports.NormalDevelopment = exports.Expansionist = exports.NormalAggression = exports.Friendly = exports.Aggressive = void 0;
+var Aggressive_1 = require("@civ-clone/base-leader-trait-aggression/Aggression/Aggressive");
+Object.defineProperty(exports, "Aggressive", { enumerable: true, get: function () { return Aggressive_1.Aggressive; } });
+var Friendly_1 = require("@civ-clone/base-leader-trait-aggression/Aggression/Friendly");
+Object.defineProperty(exports, "Friendly", { enumerable: true, get: function () { return Friendly_1.Friendly; } });
+var Normal_1 = require("@civ-clone/base-leader-trait-aggression/Aggression/Normal");
+Object.defineProperty(exports, "NormalAggression", { enumerable: true, get: function () { return Normal_1.Normal; } });
+var Expansionist_1 = require("@civ-clone/base-leader-trait-development/Development/Expansionist");
+Object.defineProperty(exports, "Expansionist", { enumerable: true, get: function () { return Expansionist_1.Expansionist; } });
+var Normal_2 = require("@civ-clone/base-leader-trait-development/Development/Normal");
+Object.defineProperty(exports, "NormalDevelopment", { enumerable: true, get: function () { return Normal_2.Normal; } });
+var Perfectionist_1 = require("@civ-clone/base-leader-trait-development/Development/Perfectionist");
+Object.defineProperty(exports, "Perfectionist", { enumerable: true, get: function () { return Perfectionist_1.Perfectionist; } });
+var Civilized_1 = require("@civ-clone/base-leader-trait-militarism/Militarism/Civilized");
+Object.defineProperty(exports, "Civilized", { enumerable: true, get: function () { return Civilized_1.Civilized; } });
+var Militaristic_1 = require("@civ-clone/base-leader-trait-militarism/Militarism/Militaristic");
+Object.defineProperty(exports, "Militaristic", { enumerable: true, get: function () { return Militaristic_1.Militaristic; } });
+var Normal_3 = require("@civ-clone/base-leader-trait-militarism/Militarism/Normal");
+Object.defineProperty(exports, "NormalMilitarism", { enumerable: true, get: function () { return Normal_3.Normal; } });
+//# sourceMappingURL=Traits.js.map

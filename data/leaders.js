@@ -1,0 +1,102 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.leaderRows = void 0;
+const Leaders_1 = require("../Leaders");
+exports.leaderRows = [
+    {
+        row: 1,
+        Leader: Leaders_1.JuliusCaesar,
+        colour: 1,
+        attack: 0,
+        expand: 1,
+        civilize: 1,
+    },
+    { row: 2, Leader: Leaders_1.Hammurabi, colour: 2, attack: -1, expand: -1, civilize: 1 },
+    {
+        row: 3,
+        Leader: Leaders_1.FrederickTheGreat,
+        colour: 3,
+        attack: 1,
+        expand: -1,
+        civilize: 1,
+    },
+    { row: 4, Leader: Leaders_1.RamessesII, colour: 4, attack: 0, expand: 0, civilize: 1 },
+    {
+        row: 5,
+        Leader: Leaders_1.AbrahamLincoln,
+        colour: 5,
+        attack: -1,
+        expand: 0,
+        civilize: 1,
+    },
+    {
+        row: 6,
+        Leader: Leaders_1.AlexanderTheGreat,
+        colour: 6,
+        attack: 0,
+        expand: 1,
+        civilize: -1,
+    },
+    {
+        row: 7,
+        Leader: Leaders_1.MahatmaGandhi,
+        colour: 7,
+        attack: -1,
+        expand: -1,
+        civilize: 0,
+    },
+    {
+        row: 8,
+        Leader: Leaders_1.CatherineTheGreat,
+        colour: 1,
+        attack: 1,
+        expand: 0,
+        civilize: -1,
+    },
+    { row: 9, Leader: Leaders_1.Shaka, colour: 2, attack: 1, expand: 0, civilize: 0 },
+    { row: 10, Leader: Leaders_1.NapoleonI, colour: 3, attack: 1, expand: 1, civilize: 1 },
+    {
+        row: 11,
+        Leader: Leaders_1.MoctezumaII,
+        colour: 4,
+        attack: 0,
+        expand: -1,
+        civilize: 1,
+    },
+    { row: 12, Leader: Leaders_1.MaoZedong, colour: 5, attack: 0, expand: 0, civilize: 1 },
+    { row: 13, Leader: Leaders_1.ElizabethI, colour: 6, attack: 0, expand: 1, civilize: 0 },
+    {
+        row: 14,
+        Leader: Leaders_1.GenghisKhan,
+        colour: 7,
+        attack: 1,
+        expand: 1,
+        civilize: -1,
+    },
+    {
+        row: 16,
+        Leader: Leaders_1.TokugawaIeyasu,
+        colour: 2,
+        attack: 1,
+        expand: -1,
+        civilize: -1,
+    },
+    {
+        row: 17,
+        Leader: Leaders_1.RagnarLodbrok,
+        colour: 3,
+        attack: 1,
+        expand: 1,
+        civilize: 0,
+    },
+    {
+        row: 21,
+        Leader: Leaders_1.SittingBull,
+        colour: 7,
+        attack: 0,
+        expand: 0,
+        civilize: 0,
+    },
+];
+exports.default = exports.leaderRows;
+//# sourceMappingURL=leaders.js.map
