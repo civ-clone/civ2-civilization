@@ -6,6 +6,7 @@ export type LeaderRow = {
   attack: number;
   expand: number;
   civilize: number;
+  cityStyle: number;
 };
 export declare const leaderRows: LeaderRow[];
 export default leaderRows;

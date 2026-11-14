@@ -13,6 +13,7 @@ import {
 } from '../Traits';
 import AttributeRegistry from '@civ-clone/core-civilization/AttributeRegistry';
 import Civilization from '@civ-clone/core-civilization/Civilization';
+import CityNameRegistry from '@civ-clone/core-civilization/CityNameRegistry';
 import CivilizationRegistry from '@civ-clone/core-civilization/CivilizationRegistry';
 import Leader from '@civ-clone/core-civilization/Leader';
 import LeaderRegistry from '@civ-clone/core-civilization/LeaderRegistry';
@@ -20,23 +21,27 @@ import TraitRegistry from '@civ-clone/core-civilization/TraitRegistry';
 import { expect } from 'chai';
 import leaderRows from '../data/leaders';
 import registerAttributes from '../registerAttributes';
+import registerCityNames from '../registerCityNames';
 import registerCivilizations from '../registerCivilizations';
 import registerLeaders from '../registerLeaders';
 import registerTraits from '../registerTraits';
 
 const setUp = () => {
   const attributeRegistry = new AttributeRegistry(),
+    cityNameRegistry = new CityNameRegistry(),
     civilizationRegistry = new CivilizationRegistry(),
     leaderRegistry = new LeaderRegistry(),
     traitRegistry = new TraitRegistry();
 
   registerAttributes(attributeRegistry);
+  registerCityNames(cityNameRegistry);
   registerCivilizations(civilizationRegistry);
   registerLeaders(leaderRegistry);
   registerTraits(traitRegistry);
 
   return {
     attributeRegistry,
+    cityNameRegistry,
     civilizationRegistry,
     leaderRegistry,
     traitRegistry,
@@ -44,10 +49,10 @@ const setUp = () => {
 };
 
 describe('civ2-civilization', (): void => {
-  it('registers the 17 Civ2 tribes that have a package, in @LEADERS order', (): void => {
+  it("registers Civ2's 21 tribes, in @LEADERS order", (): void => {
     const { civilizationRegistry } = setUp();
 
-    expect(civilizationRegistry.entries()).length(17);
+    expect(civilizationRegistry.entries()).length(21);
     expect(
       civilizationRegistry
         .entries()
@@ -67,8 +72,12 @@ describe('civ2-civilization', (): void => {
       'Chinese',
       'English',
       'Mongol',
+      'Celtic',
       'Japanese',
       'Viking',
+      'Spanish',
+      'Persian',
+      'Carthaginian',
       'Sioux',
     ]);
     expect(
@@ -76,19 +85,19 @@ describe('civ2-civilization', (): void => {
         ...civilizationRegistry.entries(),
         ...(Object.values(Civilizations) as unknown as (typeof Civilization)[]),
       ]).size
-    ).equal(17);
+    ).equal(21);
   });
 
   it('gives each civilization one leader of its own', (): void => {
     const { civilizationRegistry, leaderRegistry } = setUp();
 
-    expect(leaderRegistry.entries()).length(17);
+    expect(leaderRegistry.entries()).length(21);
     expect(
       new Set([
         ...leaderRegistry.entries(),
         ...(Object.values(Leaders) as unknown as (typeof Leader)[]),
       ]).size
-    ).equal(17);
+    ).equal(21);
     civilizationRegistry
       .entries()
       .forEach((CivilizationType) =>
@@ -136,10 +145,10 @@ describe('civ2-civilization', (): void => {
 
   it('gives each civilization its Civ2 colour set, 1 to 7, the three of a set coming from different rows', (): void => {
     const { attributeRegistry, civilizationRegistry } = setUp(),
-      colourOf = (CivilizationType: typeof Civilization) =>
+      colourOf = (CivilizationType: typeof Civilization, name = 'colourSet') =>
         attributeRegistry
           .getByCivilization(CivilizationType)
-          .filter((attribute) => attribute.name() === 'colourSet')
+          .filter((attribute) => attribute.name() === name)
           .map((attribute) => attribute.value());
 
     civilizationRegistry.entries().forEach((CivilizationType) => {
@@ -153,5 +162,73 @@ describe('civ2-civilization', (): void => {
     leaderRows.forEach(({ row, colour }) =>
       expect(colour, `row ${row}`).equal(((row - 1) % 7) + 1)
     );
+  });
+
+  it('gives each civilization its city style, 0 to 3, from @LEADERS', (): void => {
+    const { attributeRegistry } = setUp(),
+      styleOf = (CivilizationType: typeof Civilization) =>
+        attributeRegistry
+          .getByCivilization(CivilizationType)
+          .filter((attribute) => attribute.name() === 'cityStyle')
+          .map((attribute) => attribute.value());
+
+    leaderRows.forEach(({ Leader, cityStyle }) =>
+      expect(styleOf(Leader.civilization()), Leader.name).eql([cityStyle])
+    );
+    // Row 1, the Romans: classical (1); row 8, the Russians: modern (3); row 16, the Japanese: far eastern (2).
+    expect(styleOf(Civilizations.Roman)).eql([1]);
+    expect(styleOf(Civilizations.Russian)).eql([3]);
+    expect(styleOf(Civilizations.Japanese)).eql([2]);
+  });
+
+  it('registers the people, nation, colours and city names of the tribes whose packages register none, and only theirs', (): void => {
+    const { attributeRegistry, cityNameRegistry } = setUp(),
+      namesOf = (CivilizationType: typeof Civilization) =>
+        cityNameRegistry
+          .entries()
+          .filter((cityName) => cityName.civilization() === CivilizationType),
+      classOnly = [
+        Civilizations.Celtic,
+        Civilizations.Spanish,
+        Civilizations.Persian,
+        Civilizations.Carthaginian,
+      ];
+
+    classOnly.forEach((CivilizationType) => {
+      const names = attributeRegistry
+        .getByCivilization(CivilizationType)
+        .map((attribute) => attribute.name());
+
+      expect(names, CivilizationType.name).include.members([
+        'people',
+        'nation',
+        'colors',
+        'colourSet',
+        'cityStyle',
+      ]);
+
+      const cityNames = namesOf(CivilizationType);
+
+      expect(cityNames.length, CivilizationType.name).above(10);
+      expect(
+        cityNames.filter((cityName) => cityName.capital()),
+        CivilizationType.name
+      ).length(1);
+      expect(cityNames[0].capital()).true;
+    });
+
+    // The others' packages register their own: only Civ2's two are added here.
+    expect(
+      attributeRegistry
+        .getByCivilization(Civilizations.Roman)
+        .map((attribute) => attribute.name())
+    ).eql(['colourSet', 'cityStyle']);
+    expect(namesOf(Civilizations.Roman)).length(0);
+    // The capital is what a game takes first.
+    const [capital] = namesOf(Civilizations.Celtic);
+
+    expect(
+      cityNameRegistry.takeCapitalByCivilization(Civilizations.Celtic)
+    ).equal(capital.name());
   });
 });

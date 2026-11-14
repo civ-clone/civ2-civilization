@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TokugawaIeyasu = exports.SittingBull = exports.Shaka = exports.RamessesII = exports.RagnarLodbrok = exports.NapoleonI = exports.MoctezumaII = exports.MaoZedong = exports.MahatmaGandhi = exports.JuliusCaesar = exports.Hammurabi = exports.GenghisKhan = exports.FrederickTheGreat = exports.ElizabethI = exports.CatherineTheGreat = exports.AlexanderTheGreat = exports.AbrahamLincoln = void 0;
+exports.XerxesI = exports.TokugawaIeyasu = exports.SittingBull = exports.Shaka = exports.RamessesII = exports.RagnarLodbrok = exports.NapoleonI = exports.MoctezumaII = exports.MaoZedong = exports.MahatmaGandhi = exports.JuliusCaesar = exports.IsabellaI = exports.HannibalBarca = exports.Hammurabi = exports.GenghisKhan = exports.FrederickTheGreat = exports.ElizabethI = exports.CatherineTheGreat = exports.Brennus = exports.AlexanderTheGreat = exports.AbrahamLincoln = void 0;
 var AbrahamLincoln_1 = require("@civ-clone/base-civilization-american/Leaders/AbrahamLincoln");
 Object.defineProperty(exports, "AbrahamLincoln", { enumerable: true, get: function () { return AbrahamLincoln_1.AbrahamLincoln; } });
 var AlexanderTheGreat_1 = require("@civ-clone/base-civilization-greek/Leaders/AlexanderTheGreat");
 Object.defineProperty(exports, "AlexanderTheGreat", { enumerable: true, get: function () { return AlexanderTheGreat_1.AlexanderTheGreat; } });
+var Brennus_1 = require("@civ-clone/base-civilization-celtic/Leaders/Brennus");
+Object.defineProperty(exports, "Brennus", { enumerable: true, get: function () { return Brennus_1.Brennus; } });
 var CatherineTheGreat_1 = require("@civ-clone/base-civilization-russian/Leaders/CatherineTheGreat");
 Object.defineProperty(exports, "CatherineTheGreat", { enumerable: true, get: function () { return CatherineTheGreat_1.CatherineTheGreat; } });
 var ElizabethI_1 = require("@civ-clone/base-civilization-english/Leaders/ElizabethI");
@@ -15,6 +17,10 @@ var GenghisKhan_1 = require("@civ-clone/base-civilization-mongol/Leaders/Genghis
 Object.defineProperty(exports, "GenghisKhan", { enumerable: true, get: function () { return GenghisKhan_1.GenghisKhan; } });
 var Hammurabi_1 = require("@civ-clone/base-civilization-babylonian/Leaders/Hammurabi");
 Object.defineProperty(exports, "Hammurabi", { enumerable: true, get: function () { return Hammurabi_1.Hammurabi; } });
+var HannibalBarca_1 = require("@civ-clone/base-civilization-carthaginian/Leaders/HannibalBarca");
+Object.defineProperty(exports, "HannibalBarca", { enumerable: true, get: function () { return HannibalBarca_1.HannibalBarca; } });
+var IsabellaI_1 = require("@civ-clone/base-civilization-spanish/Leaders/IsabellaI");
+Object.defineProperty(exports, "IsabellaI", { enumerable: true, get: function () { return IsabellaI_1.IsabellaI; } });
 var JuliusCaesar_1 = require("@civ-clone/base-civilization-roman/Leaders/JuliusCaesar");
 Object.defineProperty(exports, "JuliusCaesar", { enumerable: true, get: function () { return JuliusCaesar_1.JuliusCaesar; } });
 var MahatmaGandhi_1 = require("@civ-clone/base-civilization-indian/Leaders/MahatmaGandhi");
@@ -35,4 +41,6 @@ var SittingBull_1 = require("@civ-clone/base-civilization-sioux/Leaders/SittingB
 Object.defineProperty(exports, "SittingBull", { enumerable: true, get: function () { return SittingBull_1.SittingBull; } });
 var TokugawaIeyasu_1 = require("@civ-clone/base-civilization-japanese/Leaders/TokugawaIeyasu");
 Object.defineProperty(exports, "TokugawaIeyasu", { enumerable: true, get: function () { return TokugawaIeyasu_1.TokugawaIeyasu; } });
+var XerxesI_1 = require("@civ-clone/base-civilization-persian/Leaders/XerxesI");
+Object.defineProperty(exports, "XerxesI", { enumerable: true, get: function () { return XerxesI_1.XerxesI; } });
 //# sourceMappingURL=Leaders.js.map
