@@ -10,7 +10,8 @@ Civilization II's 21 tribes on the shared `base-civilization-*` packages, each d
 - **Leaders:** one for each tribe, the existing class nearest to Civ2's.
 - **Attitudes:** each leader's three @LEADERS attitudes as the `base-leader-trait-*` traits: rational, normal or
   aggressive (`Friendly`, `NormalAggression`, `Aggressive`); perfectionist, normal or expansionist; militaristic,
-  normal or civilized. civ2-diplomacy reads the first, as the leader's temper at a meeting.
+  normal or civilized. civ2-diplomacy reads the first, as the leader's temper at a meeting, and civ2-player the third, when it balances
+  starts.
 - **Colour sets:** each tribe's Civ2 colour set, 1 to 7, as the `colourSet` attribute.
 - **City styles:** each tribe's city style, 0 to 3, as the `cityStyle` attribute.
 
@@ -22,6 +23,6 @@ Civilization II's 21 tribes on the shared `base-civilization-*` packages, each d
   a leader has under each government. No Civilopedia text.
 - Only one tribe of each colour set playing in a game, and a destroyed civilization returning as another of its
   colour.
-- **Unread attitudes:** nothing in a civ2 game reads the perfectionist–expansionist or militaristic–civilized traits
-  yet. The computer players' personality rules (`base-leader-personality`) would, and Civilization II's AI reads all
-  three in its production, settling and science choices (OpenCiv2 `city_production.cpp`, `ai.cpp`).
+- **Unread attitude:** nothing in a civ2 game reads the perfectionist–expansionist traits yet. The computer players'
+  personality rules (`base-leader-personality`) would, and Civilization II's AI reads all three attitudes in its
+  production, settling and science choices (OpenCiv2 `city_production.cpp`, `ai.cpp`).
