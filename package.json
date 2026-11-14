@@ -1,6 +1,6 @@
 {
   "name": "@civ-clone/civ2-civilization",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Civilization II's 21 tribes, their leaders, attitudes, colour sets and city styles, on the shared base-civilization-* packages.",
   "main": "index.js",
   "repository": "git@github.com:civ-clone/civ2-civilization.git",
