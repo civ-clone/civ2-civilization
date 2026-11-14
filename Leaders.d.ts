@@ -1,10 +1,13 @@
 export { AbrahamLincoln } from '@civ-clone/base-civilization-american/Leaders/AbrahamLincoln';
 export { AlexanderTheGreat } from '@civ-clone/base-civilization-greek/Leaders/AlexanderTheGreat';
+export { Brennus } from '@civ-clone/base-civilization-celtic/Leaders/Brennus';
 export { CatherineTheGreat } from '@civ-clone/base-civilization-russian/Leaders/CatherineTheGreat';
 export { ElizabethI } from '@civ-clone/base-civilization-english/Leaders/ElizabethI';
 export { FrederickTheGreat } from '@civ-clone/base-civilization-german/Leaders/FrederickTheGreat';
 export { GenghisKhan } from '@civ-clone/base-civilization-mongol/Leaders/GenghisKhan';
 export { Hammurabi } from '@civ-clone/base-civilization-babylonian/Leaders/Hammurabi';
+export { HannibalBarca } from '@civ-clone/base-civilization-carthaginian/Leaders/HannibalBarca';
+export { IsabellaI } from '@civ-clone/base-civilization-spanish/Leaders/IsabellaI';
 export { JuliusCaesar } from '@civ-clone/base-civilization-roman/Leaders/JuliusCaesar';
 export { MahatmaGandhi } from '@civ-clone/base-civilization-indian/Leaders/MahatmaGandhi';
 export { MaoZedong } from '@civ-clone/base-civilization-chinese/Leaders/MaoZedong';
@@ -15,3 +18,4 @@ export { RamessesII } from '@civ-clone/base-civilization-egyptian/Leaders/Ramess
 export { Shaka } from '@civ-clone/base-civilization-zulu/Leaders/Shaka';
 export { SittingBull } from '@civ-clone/base-civilization-sioux/Leaders/SittingBull';
 export { TokugawaIeyasu } from '@civ-clone/base-civilization-japanese/Leaders/TokugawaIeyasu';
+export { XerxesI } from '@civ-clone/base-civilization-persian/Leaders/XerxesI';
