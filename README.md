@@ -14,13 +14,18 @@ Civilization II's 21 tribes on the shared `base-civilization-*` packages, each d
   starts.
 - **Colour sets:** each tribe's Civ2 colour set, 1 to 7, as the `colourSet` attribute.
 - **City styles:** each tribe's city style, 0 to 3, as the `cityStyle` attribute.
+- **Leader titles:** a `LeaderTitle` rule (core-civilization) answering a translation key for each government,
+  `LeaderTitle.civ2.<Government>` (`LeaderTitle.civ2.Monarchy`, say), and nothing for a government Civ2 doesn't have.
+  The words are the renderer's own.
 
 `data/leaders.ts` holds the numbers, row by row. `tests/rulesTxt.test.ts` compares them with your own RULES.TXT when
 `CIV2_PATH` is set.
 
 ## Not yet here
-- Civ2's own leader names and female leaders (the Celts are led by Brennus, not Cunobelin or Boadicea), and the titles
-  a leader has under each government. No Civilopedia text.
+- Civ2's own leader names and female leaders (the Celts are led by Brennus, not Cunobelin or Boadicea). No Civilopedia
+  text.
+- Civ2's titles differ by tribe and by a male or female leader (`civ_leader_title`: RULES.TXT's @GOVERNMENTS, unless
+  @LEADERS overrides one); these are one per government. Titles from a player's own RULES.TXT aren't read.
 - Only one tribe of each colour set playing in a game, and a destroyed civilization returning as another of its
   colour.
 - **Unread attitude:** nothing in a civ2 game reads the perfectionist–expansionist traits yet. The computer players'
