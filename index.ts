@@ -1,3 +1,4 @@
+import './registerRules';
 import registerAttributes from './registerAttributes';
 import registerCityNames from './registerCityNames';
 import registerCivilizations from './registerCivilizations';

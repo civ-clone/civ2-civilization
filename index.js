@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("./registerRules");
 const registerAttributes_1 = require("./registerAttributes");
 const registerCityNames_1 = require("./registerCityNames");
 const registerCivilizations_1 = require("./registerCivilizations");
