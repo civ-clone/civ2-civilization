@@ -17,6 +17,13 @@ Civilization II's 21 tribes on the shared `base-civilization-*` packages, each d
 - **Leader titles:** a `LeaderTitle` rule (core-civilization) answering a translation key for each government,
   `LeaderTitle.civ2.<Government>` (`LeaderTitle.civ2.Monarchy`, say), and nothing for a government Civ2 doesn't have.
   The words are the renderer's own.
+- **Personality** (`Rules/Player/personality`): what the three attitudes make a computer player do, as
+  base-leader-personality's rules, so the AI plays each leader by its attitudes with no change of its own. civilize
+  leans science (`ScienceBias`), war weariness (`MilitaryUnhappinessTolerance`), production (`BuildWeight`), the army
+  (`ArmySize`) and Settlers (`Expansion`); expand sets Settlers (`Expansion`) and overseas settling
+  (`OverseasSettlers`); attack sets `AttackConfidence`; civilize and attack set `PollutionConcern`. Which attitude
+  drives what follows where the original's AI reads it; the amounts are those Civ1's personality uses. No
+  `WantedAdvances` (the original's science never stops) or `AdvanceGrade`.
 
 `data/leaders.ts` holds the numbers, row by row. `tests/rulesTxt.test.ts` compares them with your own RULES.TXT when
 `CIV2_PATH` is set.
@@ -28,6 +35,5 @@ Civilization II's 21 tribes on the shared `base-civilization-*` packages, each d
   @LEADERS overrides one); these are one per government. Titles from a player's own RULES.TXT aren't read.
 - Only one tribe of each colour set playing in a game, and a destroyed civilization returning as another of its
   colour.
-- **Unread attitude:** nothing in a civ2 game reads the perfectionist–expansionist traits yet. The computer players'
-  personality rules (`base-leader-personality`) would, and Civilization II's AI reads all three attitudes in its
-  production, settling and science choices (OpenCiv2 `city_production.cpp`, `ai.cpp`).
+- **The original's own weights:** the personality rules use Civ1's amounts, not the original's production, settling and
+  science formulas (OpenCiv2 `city_production.cpp`, `ai.cpp`).
